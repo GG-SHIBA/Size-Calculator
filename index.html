@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Size Calculator</title>
+<link rel="icon" href="earning.png" type="image/png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Calculator Section -->
+    <div class="section active" id="calculatorSection">
+        <div class="calculator">
+            <h2>Position Size Calculator</h2><br/><br/>
+            
+            <div class="form-row">
+                <label for="entry" class="title1">Entry Price ($)</label>
+                <input type="number" id="entry" placeholder="0">
+            </div>
+        
+            <div class="form-row">
+                <label for="sl" class="title2">Stop Loss ($)</label>
+                <input type="number" id="sl" placeholder="0">
+            </div>
+        
+            <div class="form-row">
+                <label for="tp" class="title3">Take Profit ($)</label>
+                <input type="number" id="tp" placeholder="0">
+            </div>
+        
+            <div class="form-row">
+                <label for="risk" class="title4">Risk Amount ($)</label>
+                <input type="number" id="risk" placeholder="0">
+            </div>
+            <button id="calculateBtn">Calculate</button>
+        </div>
+        <div class="calculator" id="calculatorError"  style="display: none; margin-top: 20px">
+            <div id="error" style="color: #c21919;"></div>
+        </div>
+        <div class="calculator" id="calculatorResult"  style="display: none; margin-top: 20px">
+            <div class="result" id="result"></div>
+        </div>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
