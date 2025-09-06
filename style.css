@@ -1,3 +1,8 @@
+/* iPhone Safari fixes */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden; /* no side scrolling */
+}
 /* Responsive Design for iPhone (≤ 640px width) */
 @media (max-width: 480px) {
     body {
@@ -37,7 +42,7 @@
     .form-row input {
         width: 100%;
         padding: 10px;
-        font-size: 14px;
+        ffont-size: 16px; /* prevents Safari zoom */
         box-sizing: border-box; /* ensures input doesn’t overflow */
     }
 
