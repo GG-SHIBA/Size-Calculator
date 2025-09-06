@@ -9,6 +9,14 @@ html, body {
     background: #f5f5f5;
     max-width: 100%;
     overflow-x: hidden; /* stop horizontal scroll */
+    
+    /* Handle iPhone safe area */
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+body {
+    min-height: 100vh;
+    -webkit-overflow-scrolling: touch; /* smooth iOS scrolling */
 }
 
 /* Toggle bar */
