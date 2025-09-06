@@ -1,5 +1,5 @@
 /* Responsive Design for iPhone (≤ 430px width) */
-@media (max-width: 430px) {
+@media (max-width: 480px) {
     body {
         margin: 0;
         padding: 0;
