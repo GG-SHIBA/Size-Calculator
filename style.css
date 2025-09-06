@@ -1,67 +1,5 @@
-/* iPhone Safari fixes */
-html, body {
-    max-width: 100%;
-    overflow-x: hidden; /* no side scrolling */
-}
-/* Responsive Design for iPhone (≤ 640px width) */
-@media (max-width: 480px) {
-    body {
-        margin: 0;
-        padding: 0;
-    }
-
-    .section {
-        padding: 10px;
-    }
-
-    .calculator {
-        width: calc(100% - 20px); /* fit inside screen with 10px margins */
-        max-width: 90%;
-        margin: 0 auto;          /* center it */
-        padding: 15px;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-        box-sizing: border-box;  /* prevents overflow */
-    }
-
-    .calculator h2 {
-        font-size: 18px;
-        margin-bottom: 15px;
-    }
-
-    .form-row {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 6px;
-    }
-
-    .form-row label {
-        font-size: 14px;
-    }
-
-    .form-row input {
-        width: 100%;
-        padding: 10px;
-        ffont-size: 16px; /* prevents Safari zoom */
-        box-sizing: border-box; /* ensures input doesn’t overflow */
-    }
-
-    .calculator button {
-        width: 100%;
-        font-size: 15px;
-        padding: 12px;
-        border-radius: 6px;
-    }
-
-    .result {
-        grid-template-columns: 1fr;
-        gap: 8px;
-        font-size: 14px;
-    }
-}
-
 /* General Styles */
-body {
+html, body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
@@ -69,6 +7,8 @@ body {
     display: flex;
     flex-direction: column;
     background: #f5f5f5;
+    max-width: 100%;
+    overflow-x: hidden; /* stop horizontal scroll */
 }
 
 /* Toggle bar */
@@ -113,6 +53,7 @@ body {
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
+    box-sizing: border-box;
 }
 .calculator2 {
     display: flex;
@@ -139,19 +80,20 @@ body {
     font-weight: bold;
 }
 label.title1 { color: #0655a4; }   /* Blue */
-label.title2 { color: #c21919; }      /* Red */
-label.title3 { color: #108a2d; }      /* Green */
-label.title4 { color: #993366; }    /* pruple */
+label.title2 { color: #c21919; }   /* Red */
+label.title3 { color: #108a2d; }   /* Green */
+label.title4 { color: #993366; }   /* Purple */
 .form-row input {
     flex: 1.5;
-    padding: 8px 10px;
+    padding: 10px;                  /* larger for touch */
     border: 1px solid #ddd;
     border-radius: 6px;
-    font-size: 14px;
+    font-size: 16px;                /* fix iOS zoom issue */
+    box-sizing: border-box;
 }
 .calculator button {
     width: 100%;
-    padding: 12px;
+    padding: 14px;
     background: #108a2d;
     color: #fff;
     border: none;
@@ -181,3 +123,51 @@ label.title4 { color: #993366; }    /* pruple */
 .value.pnl { color: #b32d00; }
 .value.rr { color: #993366; }
 .value.fee { color: #555; font-size: 12px; font-style: italic;}
+
+/* Responsive Design for iPhone (≤ 480px) */
+@media (max-width: 480px) {
+    .section {
+        padding: 10px;
+    }
+
+    .calculator {
+        width: calc(100% - 20px); /* 10px margin on each side */
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    .calculator h2 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .form-row label {
+        font-size: 14px;
+    }
+
+    .form-row input {
+        width: 100%;
+        font-size: 16px; /* prevent zoom */
+    }
+
+    .calculator button {
+        width: 100%;
+        font-size: 16px;
+        padding: 14px;
+    }
+
+    .result {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        font-size: 14px;
+    }
+}
