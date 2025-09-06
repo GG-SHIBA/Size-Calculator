@@ -11,7 +11,7 @@
 
     .calculator {
         width: calc(100% - 20px); /* fit inside screen with 10px margins */
-        max-width: 100%;
+        max-width: 90%;
         margin: 0 auto;          /* center it */
         padding: 15px;
         border-radius: 10px;
